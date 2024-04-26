@@ -1,12 +1,14 @@
 import { useContext, useRef, useState, useEffect } from "react";
 import { MyContext } from "../context";
+import { toast } from 'react-toastify';
 
 const Result = () => {
 
     const context = useContext(MyContext);
 
     useEffect(() => {
-        context.result()
+        context.result();
+        toast.success("There is your answer")
     }, [])
 
     return(
