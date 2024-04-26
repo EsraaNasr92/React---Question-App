@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { MyContext } from './context';
-
+import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
 import 'animate.css';
 import Initial from './components/Initial';
@@ -19,7 +19,17 @@ const App = () => {
 
   return (
     <div className="container">
-      {handleComponent()}
+
+      <SwitchTransition mode='out-in'>
+        <CSSTransition 
+          key={context.state.screen}
+          timeout={500}
+          classNames='fade'
+        >
+          {handleComponent()}
+        </CSSTransition>
+      </SwitchTransition>
+      
     </div>
   );
 }
