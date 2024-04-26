@@ -44,7 +44,12 @@ const Initial = () => {
                     name="question"
                 />
             {showNext &&
-                <button className="btn" onClick={handleSubmit}> Next </button>
+                <button 
+                    className="btn animate__animated animate__fadeIn" 
+                    onClick={handleSubmit}
+                > 
+                    Next 
+                </button>
             }
 
             { showError &&
