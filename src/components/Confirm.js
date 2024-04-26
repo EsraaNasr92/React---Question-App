@@ -1,7 +1,13 @@
+import { useContext, useRef, useState } from "react";
+import { MyContext } from "../context";
+
 const Confirm = () => {
+
+    const context = useContext(MyContext);
+
     return(
         <div>
-            Confirm
+            { context.state.question }
         </div>
     );
 }
